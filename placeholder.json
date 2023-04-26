@@ -1,0 +1,36 @@
+{
+    "columns": [
+        [
+            {
+                "title": "Date",
+                "type": "str",
+                "contents": [
+                    "2015-01-01",
+                    "2015-01-02",
+                    "2015-01-03",
+                    "2015-01-04"
+                ]
+            },
+            {
+                "title": "URL",
+                "type": "str",
+                "contents": [
+                    "http://www.google.com",
+                    "http://www.yahoo.com",
+                    "http://www.bing.com",
+                    "http://www.duckduckgo.com"
+                ]
+            },
+            {
+                "title": "Number",
+                "type": "int",
+                "contents": [
+                    1,
+                    6456754,
+                    34,
+                    234
+                ]
+            }
+        ]
+    ]
+}
