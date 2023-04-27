@@ -1,13 +1,13 @@
 import json
 
-def calculate_column_width(column):
+def calculate_column_width(column: dict) -> int:
 	input_column = column.copy()
 	input_column["contents"] = column["contents"].copy()
 	input_column["contents"].insert(0, input_column["title"])
 	width = max([len(str(x)) for x in input_column["contents"]])
 	return width
 
-def generate_table(table_json: str):
+def generate_table(table_json: str) -> str:
 	table_dict = json.loads(table_json)
 	table = ""
 
