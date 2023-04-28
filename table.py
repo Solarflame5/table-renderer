@@ -11,6 +11,21 @@ def generate_table(table_json: str) -> str:
 	table_dict = json.loads(table_json)
 	table = ""
 
+	table_styles = {
+		"ascii": [
+			"+", "+", "+", "+", "+", "+", "+", "+", "+", "-", "|"
+		],
+		"unicode_light": [
+			"┌", "┬", "┐", "├", "┼", "┤", "└", "┴", "┘", "─", "│"
+		],
+		"unicode_heavy": [
+			"┏", "┳", "┓", "┣", "╋", "┫", "┗", "┻", "┛", "━", "┃"
+		],
+		"unicode_double": [
+			"╔", "╦", "╗", "╠", "╬", "╣", "╚", "╩", "╝", "═", "║"
+		]
+	}
+
 	column_widths = []
 	for column in table_dict["columns"][0]: # get column widths
 		column_widths.append(calculate_column_width(column))
