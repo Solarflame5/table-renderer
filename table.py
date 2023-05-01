@@ -9,6 +9,30 @@ def calculate_column_width(column: dict) -> int:
 	return width
 
 def generate_table(table_json: str, style: str) -> str:
+	"""
+	Generates a table string from the provided JSON\n
+		Parameters:
+			table_json: str
+				The table contents in JSON format
+			style: str
+				The picked style to use for the box drawing characters
+		
+		Available styles:
+			"ascii", "unicode_light", "unicode_heavy", "unicode_double"
+		
+		JSON format:
+		```
+		{
+		    "columns": [
+		        {
+		            "title": "",
+		            "type": "",
+		            "contents": []
+		        }
+		    ]
+		}
+		```
+	"""
 	table_dict = json.loads(table_json)
 	table = ""
 	row_seperator = ""
@@ -31,8 +55,6 @@ def generate_table(table_json: str, style: str) -> str:
 	column_widths = [] # get column widths
 	for column in table_dict["columns"][0]: 
 		column_widths.append(calculate_column_width(column))
-
-	print(f"picked style: {style}") # temporary
 
 	table += box_chars[style][0] # generate top borders
 	for column_index, column in enumerate(table_dict["columns"][0]):
