@@ -116,7 +116,4 @@ json_path = Path(__file__).with_name("placeholder.json")
 with json_path.open("r") as json_file:
 	placeholder_json = json_file.read()
 
-print(generate_table(placeholder_json, "ascii"))
 print(generate_table(placeholder_json, "unicode_light"))
-print(generate_table(placeholder_json, "unicode_heavy"))
-print(generate_table(placeholder_json, "unicode_double"))
